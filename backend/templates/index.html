@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rap Generator</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+    function showInfo(){
+        let i = true;
+        setInterval(function(){
+            const idx = i ? 0:1;
+            changeContent(idx);
+            i = !i
+            }, 1000);
+    }
+    function changeContent(i){
+        const content = ['三 明 治 先 生','MC SANDWICH']
+        const fonts = ['chineseFont', 'Bungee Shade']
+        document.getElementById('title').innerHTML = content[i]
+        document.getElementById('title').style.fontFamily = fonts[i]
+    }
+    showInfo();
+    </script>
+</head>
+
+<div id="header">
+    <a id="interactive_area" href="generate">
+        <h1 id='title' class="title">MC SANDWICH</h1>
+    </a>
+</div>
+</body>
+</html>

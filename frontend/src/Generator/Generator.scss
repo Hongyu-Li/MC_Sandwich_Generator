@@ -1,0 +1,149 @@
+@import '../variables.scss';
+
+.generator-container{
+    height: 100%;
+    width: 100%;
+    background: url("../images/generator_bg.jpg") repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 2% 10% 2% 7%;
+    box-sizing: border-box;
+    color: whitesmoke;
+    font-family: Helvetica;
+    .title-left {
+        margin: 0 0 2% 0 ;
+        padding: 0;
+        font-family: 'Bungee Shade';
+        font-size: 5rem;
+    }
+    .description-container{
+        display: inline-block;
+        margin-left: 1.5%;
+        text-align: left;
+        font-family: Helvetica;
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 0.8rem;
+    }
+    .main-container{
+        border-radius: 0.1%;
+        min-height: 20%;
+        margin-top: 2%;
+        display: grid;
+        grid-template-columns: 35% 40% 20%;
+        grid-column-gap: 5%;
+        .input-container{
+            padding: 1% 0;
+            font-size: 1.1rem;
+            .block-title{
+                display: inline-block;
+                margin-bottom: 2%;
+            }
+            .mode-container{
+                display: grid;
+                grid-template-columns: 48% 48%;
+                grid-column-gap: 4%;
+                // height: 10%;
+                #mode{
+                    border: 1px solid whitesmoke;
+                    border-radius: 15px;
+                    text-align: center;
+                    padding-top: 3px;
+                    font-size: 1.1rem;
+                    display: inline-block;
+                    box-sizing: content-box;
+                    height: 30px;
+                    outline:none;
+                    cursor: pointer;
+                }
+            }
+            .parameter-container{
+                .block-title {
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                }
+                #prefix{
+                    display: block;
+                    outline: none;
+                    background-color: $background-color;
+                    border: 1px solid $font-color;
+                    border-radius: 10px;
+                    font-size: 0.9rem;
+                    color: $font-color;
+                    width: 97%;
+                    padding-left: 3%;
+                    resize: none;
+                    padding-top: 3%;
+                }
+            }
+            .btn-generate{
+                font-size: 1.1rem;
+                outline: none;
+                padding: 0.5rem;
+                border: none;
+                border-radius: 2%;
+                background-color: $background-color;
+                color: $font-color;
+                box-shadow: 3px 0px 5px 1px $font-color;
+                float: right;
+                position: relative;
+                top: -3rem;
+                right: 1rem;
+            }
+        }
+        .output-container{
+            height: 100%;
+            #output-area{
+                outline: none;
+                resize: none;
+                width: 100%;
+                margin-top: 2%;
+                height: 75%;
+                font-size: 1.1rem;
+                padding: 2%;
+                border: 1px solid $font-color;
+                border-radius: 5px;
+                background-color: $background-color;
+                color: $font-color;
+                overflow-y: scroll;
+            }
+        }
+        .features-container{
+            height: 80%;
+            border: 1px dashed whitesmoke;
+            border-radius: 2%;
+            position: relative;
+            top: 8%;
+            text-align: center;
+            font-size: larger;
+            overflow: scroll;
+            .feature-title{
+                display: block;
+                text-align: center;
+                margin-top: 5%;
+            }
+            .btn-features, .btn-features-disable{
+                width: 90%;
+                font-size: 1rem;
+                outline: none;
+                padding: 0.5rem;
+                border: none;
+                border-radius: 2%;
+                margin-bottom: 5%;
+            }
+            .btn-features{
+                color: $font-color;
+            }
+            .btn-features-disable{
+                background-color: $background-color;
+                opacity: 0.2;
+            }
+        }
+    }
+    .footer{
+        position: absolute;
+        top: 95%;
+        left: 35%;
+    }
+}
+

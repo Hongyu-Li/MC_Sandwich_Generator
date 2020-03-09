@@ -1,0 +1,9 @@
+transformers==2.1.1
+torch
+numpy
+sklearn
+keras
+pypinyin
+future
+thulac
+flask

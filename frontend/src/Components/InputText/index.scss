@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.text-container {
+    height: 2rem;
+    margin-top: 1rem;
+    padding-top: 0.3rem;
+    font-size: 1.1rem;
+    display: grid;
+    grid-template-columns: 32% 67%;
+    grid-column-gap: 1%;
+    #length, #rhyme_pattern{
+        padding-left: 2%;
+        outline: none;
+        background-color: $background-color;
+        border: 1px solid $font-color;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        color: $font-color;
+        margin-top: -2%;
+        height: 100%;
+    }
+}

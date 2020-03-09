@@ -1,0 +1,39 @@
+.mask{
+    z-index: 1;
+    :after{
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top:0;
+        left:0;
+        background: black;
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+        -o-filter: blur(2px);
+        filter: blur(2px); 
+        z-index: -1;
+    }
+    .loading-img{
+        float: left;
+        width: 4.5rem;
+        height: 4.5rem;
+        margin-top: 0;
+        margin-right: 5%;
+        z-index: 999;
+    }
+    .custom-modal{
+        text-align: left;
+        position: fixed;
+        top:40%;
+        left: 30%;
+        height:18%;
+        width: 45%;
+        color: whitesmoke;
+        font-family: 'mamelon';
+        font-size: 3rem;
+        z-index: 999;
+    }
+}
+

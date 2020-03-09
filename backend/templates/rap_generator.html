@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rap Generator</title>
+</head>
+
+<form method="post">
+    <label>给个开头：</label><input type="text" name="prefix" placeholder="请输入想要的歌词开头"><br/>
+    <label>想唱几句呢：</label><input type="text" name="length" placeholder="请输入生成歌词的句数"><br/>
+    <select name="mode">
+        <option value="lucky">I am Lucky</option>
+        <option value="rhyme">Rhyme Pattern</option>
+    </select>
+    <label>押韵格式：</label><input type="text" name="rhyme_pattern" placeholder="请输入押韵格式(如ABAB):"><br/>
+    <input type="submit" value="提交">
+</form>
+<hr>
+<textarea name="output">{{text}}</textarea>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.home-page {
+    height: 100%;
+    width: 100%;
+    background: url("../images/header_bg.jpeg") repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    .footer{
+        position: absolute;
+        top: 95%;
+        left: 1%;
+        color: whitesmoke;
+    }
+}
+
+.home-title {
+    height:100%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 30%;
+    right: auto;
+    color: whitesmoke;
+    font-family: 'Bungee Shade';
+    font-size: 50px;
+    @media only screen and (min-width: 768px) {
+        font-size: 80px;
+    }
+}

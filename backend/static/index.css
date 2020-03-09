@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'chineseFont';
+    src: url('../static/chinese_font.ttf');
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    height: 100%;
+    width: 100%;
+    background: url("header_bg.jpeg") repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 30%;
+    right: auto;
+    color: whitesmoke;
+    font-family: 'Bungee Shade';
+    font-size: 80px;
+}
+
+#interactive_area {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display:block;
+}
