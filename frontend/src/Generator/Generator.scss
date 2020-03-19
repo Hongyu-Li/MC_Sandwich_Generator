@@ -1,8 +1,12 @@
 @import '../variables.scss';
 
 .generator-container{
-    height: 100%;
     width: 100%;
+    @media screen and (max-width: 768px) {
+        background: black;
+        overflow-y: scroll;
+    }
+    height: 100%;
     background: url("../images/generator_bg.jpg") repeat;
     background-size: 100% 100%;
     margin: 0;
@@ -14,10 +18,16 @@
         margin: 0 0 2% 0 ;
         padding: 0;
         font-family: 'Bungee Shade';
+        @media screen and (max-width: 768px) {
+            font-size: 3rem;
+        }
         font-size: 5rem;
     }
     .description-container{
         display: inline-block;
+        @media screen and (max-width: 768px) {
+            margin: 5% 0% 5% 0%;
+        }
         margin-left: 1.5%;
         text-align: left;
         font-family: Helvetica;
@@ -27,9 +37,15 @@
     }
     .main-container{
         border-radius: 0.1%;
-        min-height: 20%;
         margin-top: 2%;
         display: grid;
+        min-height: 20%;
+        @media screen and (max-width: 768px) {
+            min-height: 80%;
+            grid-template-columns: 100%;
+            grid-template-rows: 45% 30% 25%;
+            grid-row-gap: 2%;
+        }
         grid-template-columns: 35% 40% 20%;
         grid-column-gap: 5%;
         .input-container{
@@ -87,6 +103,10 @@
                 box-shadow: 3px 0px 5px 1px $font-color;
                 float: right;
                 position: relative;
+                @media screen and (max-width: 760px) {
+                    top: -15%;
+                    right: 1%;
+                }
                 top: -3rem;
                 right: 1rem;
             }
@@ -117,6 +137,10 @@
             text-align: center;
             font-size: larger;
             overflow: scroll;
+            @media screen and (max-width: 768px) {
+                width: 104%;
+                margin-bottom: 10%;
+            }
             .feature-title{
                 display: block;
                 text-align: center;
@@ -130,19 +154,22 @@
                 border: none;
                 border-radius: 2%;
                 margin-bottom: 5%;
+                background-color: $background-color;
             }
             .btn-features{
                 color: $font-color;
             }
             .btn-features-disable{
-                background-color: $background-color;
                 opacity: 0.2;
             }
         }
     }
     .footer{
         position: absolute;
-        top: 95%;
+        bottom: 5%;
+        @media screen and (max-width: 768px) {
+            visibility: hidden;
+        }
         left: 35%;
     }
 }

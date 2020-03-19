@@ -7,8 +7,8 @@ const InputText = (props) => {
         <div className="text-container">
             <label>{props.title}</label>
             {disable ?
-                <input type="text" placeholder='Lucky模式下就不用给格式啦～'
-                    value={props.value} id={props.id} disabled/> :
+                <input type="text" defaultValue='Lucky模式下就不用给格式啦～'
+                    value='Lucky模式下就不用给格式啦～' id={props.id} disabled style={{backgroundColor:'grey'}}/> :
                 <input type="text" placeholder={props.placeholder}
                     value={props.value} onChange={props.handleChange}
                     id={props.id}/>

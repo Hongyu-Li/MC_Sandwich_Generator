@@ -6,7 +6,12 @@
     padding-top: 0.3rem;
     font-size: 1.1rem;
     display: grid;
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 40% 61%;
+        grid-row-gap: 10%;
+    }
     grid-template-columns: 32% 67%;
+    grid-row: 1;
     grid-column-gap: 1%;
     #length, #rhyme_pattern{
         padding-left: 2%;

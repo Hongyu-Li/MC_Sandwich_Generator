@@ -4,16 +4,25 @@ import { webApi } from '../utils/webApi';
 import "./Generator.scss";
 import Modal from '../Components/Modal';
 import { validateMode, validateLength, validatePrefix, validatePattern } from '../utils/validator';
+import {isMobileBrowser} from '../utils/userAgent';
 
 
 const defaultState = {
-    prefix: '',
-    length: '',
-    mode: '',
-    rhyme_pattern: '',
+    prefix: '争执不断',
+    length: '4',
+    mode: 'Rhyme',
+    rhyme_pattern: 'ABAB',
     output: '',
     loading: false,
-    hasError: true
+    hasError: true,
+    // hasModeError: false,
+    // hasLengthError: false,
+    // hasPatternError: false,
+    // hasPrefixError: false,
+    // modeErrMsg: '',
+    // lengthErrMsg: '',
+    // patternErrMsg: '',
+    // prefixErrMsg: ''
 }
 
 class Genertor extends Component {
@@ -29,6 +38,22 @@ class Genertor extends Component {
             && !validatePrefix(prefix) && !validatePattern(mode, length, rhyme_pattern)) {
             this.setState({ hasError: false })
         } else {
+            // if (validateMode(mode)){
+            //     this.setState({hasModeError: true})
+            //     this.setState({modeErrMsg: validateMode(mode)})
+            // }
+            // if (validateLength(length)){
+            //     this.setState({hasLengthError: true})
+            //     this.setState({lengthErrMsg: validateLength(length)})
+            // }
+            // if (validatePattern(mode, length, rhyme_pattern)){
+            //     this.setState({hasPatternError: true})
+            //     this.setState({patternErrMsg: validatePattern(mode, length, rhyme_pattern)})
+            // }
+            // if (validatePrefix(prefix)){
+            //     this.setState({hasPrefixError: true})
+            //     this.setState({prefixErrMsg: validatePrefix(prefix)})
+            // }
             const errorMsg = validateMode(mode) || validateLength(length) ||
                 validatePattern(mode, length, rhyme_pattern) ||
                 validatePrefix(prefix)
@@ -50,7 +75,7 @@ class Genertor extends Component {
                 response.then((res) => {
                     if (res.ok) {
                         res.json().then((data) => {
-                            this.setState({ ...defaultState })
+                            // this.setState({ ...defaultState })
                             this.setState({ output: data.data })
                         })
                     } else if (res.status === 400) {
@@ -76,11 +101,11 @@ class Genertor extends Component {
     }
 
     render() {
-        const BUTTON_MENU = [
-            { value: "Lucky", text: "I'm lucky" },
-            { value: "Rhyme", text: "Gimme rhyme" },
-        ]
-        const LOADING_CONTENT = [
+        const BUTTON_MENU = !isMobileBrowser() ? 
+        [{ value: "Lucky", text: "I'm lucky" },{ value: "Rhyme", text: "Gimme rhyme" }]:
+        [{ value: "Lucky", text: "Lucky" },{ value: "Rhyme", text: "Rhyme" }] 
+        const LOADING_CONTENT = !isMobileBrowser() ?
+        [
             "拿了一个三明治",
             "加入了韵脚调料包",
             "尝了下味道...",
@@ -88,6 +113,9 @@ class Genertor extends Component {
             "Yay! 再尝一下～",
             "嗷，这次太咸了！",
             "丢掉，再做一个～"
+        ]:
+        [
+            "Cooking"
         ]
         return (
             <div className='generator-container'>
@@ -103,7 +131,7 @@ class Genertor extends Component {
                         <span className='block-title'>你想要押韵吗?</span>
                         <div className='mode-container'>
                             {BUTTON_MENU.map((rec) => {
-                                const style = rec.value === this.state.mode ?
+                                let style = rec.value === this.state.mode ?
                                     { backgroundColor: 'whitesmoke', color: 'black' } : { backgroundColor: 'black', color: 'whitesmoke' };
                                 return (<button value={rec.value} id='mode'
                                     onClick={(e) => this.handleChange(e)}
@@ -140,7 +168,6 @@ class Genertor extends Component {
                     <section className="output-container">
                         <span className='block-title'>三明治先生为你写的说唱:</span>
                         <textarea id='output-area' value={this.state.output}/>
-                        {/* <button className='btn-generate'>关于三明治先生</button> */}
                     </section>
 
                     <section className="features-container">
