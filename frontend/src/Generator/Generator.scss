@@ -4,7 +4,7 @@
     width: 100%;
     @media screen and (max-width: 768px) {
         background: black;
-        overflow-y: scroll;
+        overflow: auto;
     }
     height: 100%;
     background: url("../images/generator_bg.jpg") repeat;
@@ -43,7 +43,7 @@
         @media screen and (max-width: 768px) {
             min-height: 80%;
             grid-template-columns: 100%;
-            grid-template-rows: 45% 30% 25%;
+            grid-template-rows: 45% 30% 20%;
             grid-row-gap: 2%;
         }
         grid-template-columns: 35% 40% 20%;
@@ -136,10 +136,10 @@
             top: 8%;
             text-align: center;
             font-size: larger;
-            overflow: scroll;
+            overflow-y: scroll;
             @media screen and (max-width: 768px) {
                 width: 104%;
-                margin-bottom: 10%;
+                // margin-bottom: 20%;
             }
             .feature-title{
                 display: block;
