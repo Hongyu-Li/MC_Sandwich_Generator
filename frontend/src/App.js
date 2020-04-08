@@ -8,8 +8,8 @@ const App = () =>{
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path='/generate' component={Genertor}></Route>
-        <Route exact path='/' component={Home}></Route>
+        <Route exact path='/generate' component={Genertor}/>
+        <Route exact path='/' component={Home}/>
       </Switch>
     </Router>
   )
